@@ -3,8 +3,8 @@ import firebaseConfig from './apiKeys';
 
 const dbUrl = firebaseConfig.databaseURL;
 
-const getWords = () => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/words.json`)
+const getWords = (uid) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/words.json?orderBy="uid"&equalTo="${uid}"`)
     .then((response) => {
       if (response.data) {
         resolve(Object.values(response.data));
@@ -19,7 +19,7 @@ const createWords = (wordsObj) => new Promise((resolve, reject) => {
   axios.post(`${dbUrl}/words.json`, wordsObj)
     .then((response) => {
       const payload = { firebaseKey: response.data.name };
-      axios.patch(`${dbUrl}/words/${response.data.name}.json`, payload)
+      axios.patch(`${dbUrl}/words/${payload.firebaseKey}.json`, payload)
         .then(() => {
           getWords(wordsObj.uid).then(resolve);
         });
@@ -47,10 +47,18 @@ const getSingleWord = (firebaseKey) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
+const filterButtons = () => new Promise((resolve, reject) => {
+  getWords().then((wordsArray) => {
+    const filterWords = wordsArray.filter((words) => words.category);
+    resolve(filterWords);
+  }).catch((error) => reject(error));
+});
+
 export {
   getWords,
   createWords,
   deleteWord,
   updateWord,
   getSingleWord,
+  filterButtons,
 };

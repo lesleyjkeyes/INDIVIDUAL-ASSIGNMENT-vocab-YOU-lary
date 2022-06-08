@@ -9,16 +9,16 @@ import navEvents from '../Events/navEvents';
 import formEvents from '../Events/formEvents';
 import domEvents from '../Events/domEvents';
 
-const startApp = () => {
+const startApp = (user) => {
   domBuilder();
-  filterEvents();
   navBar();
-  navEvents();
-  formEvents();
-  domEvents();
   filterButtons();
   logoutButton();
-  getWords().then((wordsArray) => showWords(wordsArray));
+  filterEvents(user.uid);
+  formEvents(user.uid);
+  domEvents(user.uid);
+  navEvents(user.uid);
+  getWords(user.uid).then((wordsArray) => showWords(wordsArray));
 };
 
 export default startApp;
