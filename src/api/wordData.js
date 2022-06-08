@@ -27,17 +27,17 @@ const createWords = (wordsObj) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const deleteWord = (firebaseKey) => new Promise((resolve, reject) => {
+const deleteWord = (firebaseKey, uid) => new Promise((resolve, reject) => {
   axios.delete(`${dbUrl}/words/${firebaseKey}.json`)
     .then(() => {
-      getWords().then((wordsArray) => resolve(wordsArray));
+      getWords(uid).then((wordsArray) => resolve(wordsArray));
     })
     .catch((error) => reject(error));
 });
 
 const updateWord = (wordObj) => new Promise((resolve, reject) => {
   axios.patch(`${dbUrl}/words/${wordObj.firebaseKey}.json`, wordObj)
-    .then(() => getWords(wordObj).then(resolve))
+    .then(() => getWords(wordObj.uid).then(resolve))
     .catch(reject);
 });
 

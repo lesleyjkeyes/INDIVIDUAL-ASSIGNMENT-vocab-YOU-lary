@@ -20,7 +20,8 @@ const formEvents = (uid) => {
         title: document.querySelector('#title').value,
         description: document.querySelector('#description').value,
         category: document.querySelector('#category').value,
-        firebaseKey
+        firebaseKey,
+        uid
       };
       updateWord(wordObject).then((wordsArray) => showWords(wordsArray));
     }
