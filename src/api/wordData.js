@@ -47,9 +47,23 @@ const getSingleWord = (firebaseKey) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-const filterButtons = () => new Promise((resolve, reject) => {
-  getWords().then((wordsArray) => {
-    const filterWords = wordsArray.filter((words) => words.category);
+const javascriptFilter = (uid) => new Promise((resolve, reject) => {
+  getWords(uid).then((wordsArray) => {
+    const filterWords = wordsArray.filter((words) => words.category === 'Javascript');
+    resolve(filterWords);
+  }).catch((error) => reject(error));
+});
+
+const reactFilter = (uid) => new Promise((resolve, reject) => {
+  getWords(uid).then((wordsArray) => {
+    const filterWords = wordsArray.filter((words) => words.category === 'React');
+    resolve(filterWords);
+  }).catch((error) => reject(error));
+});
+
+const pythonFilter = (uid) => new Promise((resolve, reject) => {
+  getWords(uid).then((wordsArray) => {
+    const filterWords = wordsArray.filter((words) => words.category === 'Python');
     resolve(filterWords);
   }).catch((error) => reject(error));
 });
@@ -60,5 +74,7 @@ export {
   deleteWord,
   updateWord,
   getSingleWord,
-  filterButtons,
+  javascriptFilter,
+  reactFilter,
+  pythonFilter,
 };
