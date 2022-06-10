@@ -20,12 +20,12 @@ const navBar = () => {
               Categories
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown-item" href="#" id="javascript">Javascript</a></li>
+              <li><a class="dropdown-item" href="#" id="react">React</a></li>
+              <li><a class="dropdown-item" href="#" id="python">Python</a></li>
             </ul>
           </li>
+          <button type="button" class="btn btn-outline-light" id="python">Python</button>
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
