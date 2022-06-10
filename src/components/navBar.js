@@ -25,7 +25,6 @@ const navBar = () => {
               <li><a class="dropdown-item" href="#" id="python">Python</a></li>
             </ul>
           </li>
-          <button type="button" class="btn btn-outline-light" id="python">Python</button>
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

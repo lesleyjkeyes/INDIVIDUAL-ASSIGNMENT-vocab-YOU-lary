@@ -47,30 +47,30 @@ Create issue tickets from the items below to help you get started.
 
 # MVP Requirements
 [MVP Wireframe](https://www.figma.com/file/IW4jF3GnzCFLYbEXlgFNIZ/MVP)
-- [ ] An ERD of your data
-- [ ] Use Firebase for DB and authentication
-- [ ] Technical Flow chart (timebox this)
-- [ ] The app has a navigation bar
-  - [ ] A logo
-  - [ ] Logout button
-  - [ ] Create Entry
-  - [ ] Any other options you would like to add
+- [ X] An ERD of your data
+- [ X] Use Firebase for DB and authentication
+- [ X] Technical Flow chart (timebox this)
+- [ X] The app has a navigation bar
+  - [ X] A logo
+  - [ X] Logout button
+  - [ X] Create Entry
+  - [ X] Any other options you would like to add
 
 **The most basic requirement for this project is that a user can:**
-- [ ] Login and Logout of the application using Firebase Google Authentication
-- [ ] only see the vocabulary entries that they created
-- [ ] CREATE a vocabulary entry:
-  - [ ] Title
-  - [ ] Definition
-  - [ ] Language/Tech
-  - [ ] Time submitted - Not on form. Handle in your JS
-  - [ ] user ID - Not on form. Pull from User object.
-- [ ] READ THIER entries
-- [ ] UPDATE THEIR entries
-- [ ] DELETE THEIR entries
-- [ ] Filter by language/tech
-- [ ] Style your application using your own creativity!
-- [ ] No errors - linters should be clean
+- [ X] Login and Logout of the application using Firebase Google Authentication
+- [ X] only see the vocabulary entries that they created
+- [ X] CREATE a vocabulary entry:
+  - [ X] Title
+  - [ X] Definition
+  - [ X] Language/Tech
+  - [ X] Time submitted - Not on form. Handle in your JS
+  - [ X] user ID - Not on form. Pull from User object.
+- [ X] READ THIER entries
+- [ X] UPDATE THEIR entries
+- [ X] DELETE THEIR entries
+- [ X] Filter by language/tech
+- [ X] Style your application using your own creativity!
+- [ X] No errors - linters should be clean
 
 ## Stretch 1
 [Stretch 1 Wireframe](https://www.figma.com/file/yZE38QzpoUWELA22gGZJve/Stretch-1)

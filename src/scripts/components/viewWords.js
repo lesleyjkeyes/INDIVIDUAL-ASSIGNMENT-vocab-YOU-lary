@@ -15,7 +15,7 @@ const showWords = (array) => {
           <h5 class="card-title">${item.title}</h5>
           <h6 class="card-subtitle mb-2 text-muted">${item.category}</h6>
           <p class="card-text">${item.description}</p>
-          <h3>${item.timeStamp}</h3>
+          <h5>Posted on: ${item.time}</h5>
           <a href="#" class="card-link" id="delete-word--${item.firebaseKey}">Delete Word</a>
           <a href="#" class="card-link" id="edit-word--${item.firebaseKey}">Edit Word</a>
         </div>
