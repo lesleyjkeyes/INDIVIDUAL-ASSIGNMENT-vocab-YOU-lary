@@ -68,6 +68,34 @@ const pythonFilter = (uid) => new Promise((resolve, reject) => {
   }).catch((error) => reject(error));
 });
 
+const orderAz = (uid) => new Promise((resolve, reject) => {
+  getWords(uid).then((wordsArray) => {
+    const orderWords = wordsArray.sort((a, b) => ((a.title.toLowerCase() > b.title.toLowerCase()) ? 1 : -1));
+    resolve(orderWords);
+  }).catch((error) => reject(error));
+});
+
+const orderZa = (uid) => new Promise((resolve, reject) => {
+  getWords(uid).then((wordsArray) => {
+    const orderWords = wordsArray.sort((a, b) => ((a.title.toLowerCase() > b.title.toLowerCase()) ? -1 : 1));
+    resolve(orderWords);
+  }).catch((error) => reject(error));
+});
+
+const orderNewOld = (uid) => new Promise((resolve, reject) => {
+  getWords(uid).then((wordsArray) => {
+    const orderWords = wordsArray.sort((a, b) => ((a.time > b.time) ? 1 : -1));
+    resolve(orderWords);
+  }).catch((error) => reject(error));
+});
+
+const orderOldNew = (uid) => new Promise((resolve, reject) => {
+  getWords(uid).then((wordsArray) => {
+    const orderWords = wordsArray.sort((a, b) => ((a.time > b.time) ? -1 : 1));
+    resolve(orderWords);
+  }).catch((error) => reject(error));
+});
+
 export {
   getWords,
   createWords,
@@ -77,4 +105,8 @@ export {
   javascriptFilter,
   reactFilter,
   pythonFilter,
+  orderAz,
+  orderZa,
+  orderNewOld,
+  orderOldNew,
 };
